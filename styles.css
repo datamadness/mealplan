@@ -58,6 +58,20 @@ body {
   font-size: clamp(16px, 2vw, 22px);
 }
 
+/* Donut animation block */
+.ascii-donut {
+  margin: 0 0 12px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: #000;
+  color: var(--green);
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  white-space: pre;
+  text-shadow: 0 0 8px var(--glow);
+}
+
 /* Button row layout */
 .day-buttons {
   display: grid;

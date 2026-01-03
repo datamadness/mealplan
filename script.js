@@ -909,3 +909,59 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", renderWeeklyList);
+
+// Render a compact ASCII donut animation above the title.
+function startDonutAnimation() {
+  const donutEl = document.querySelector(".ascii-donut");
+
+  if (!donutEl) {
+    return;
+  }
+
+  let z = 0;
+  let y = 0;
+  const width = 80;
+  const height = 22;
+  const size = width * height;
+  const shades = ".,-~:;=!*#$@";
+
+  function renderFrame() {
+    z += 0.07;
+    y += 0.03;
+    const buffer = Array.from({ length: size }, (_, i) => (i % width === width - 1 ? "\n" : " "));
+    const depth = new Array(size).fill(0);
+    const cosZ = Math.cos(z);
+    const sinZ = Math.sin(z);
+    const cosY = Math.cos(y);
+    const sinY = Math.sin(y);
+
+    for (let s = 0; s < 6.28; s += 0.07) {
+      const cosS = Math.cos(s);
+      const sinS = Math.sin(s);
+      for (let t = 0; t < 6.28; t += 0.02) {
+        const sinT = Math.sin(t);
+        const cosT = Math.cos(t);
+        const ring = cosS + 2;
+        const invZ = 1 / (sinT * ring * sinZ + sinS * cosZ + 5);
+        const proj = sinT * ring * cosZ - sinS * sinZ;
+        const x = (width / 2 + 30 * invZ * (cosT * ring * cosY - proj * sinY)) | 0;
+        const yPos = (height / 2 + 15 * invZ * (cosT * ring * sinY + proj * cosY)) | 0;
+        const lum = (8 * ((sinS * sinZ - sinT * cosS * cosZ) * cosY
+          - sinT * cosS * sinZ - sinS * cosZ - cosT * cosS * sinY)) | 0;
+        const idx = x + width * yPos;
+
+        if (yPos >= 0 && yPos < height && x >= 0 && x < width && invZ > depth[idx]) {
+          depth[idx] = invZ;
+          buffer[idx] = shades[lum > 0 ? lum : 0];
+        }
+      }
+    }
+
+    donutEl.textContent = buffer.join("");
+  }
+
+  renderFrame();
+  setInterval(renderFrame, 50);
+}
+
+document.addEventListener("DOMContentLoaded", startDonutAnimation);
