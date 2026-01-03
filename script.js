@@ -1,3 +1,68 @@
+// Weekly shopping list with amounts for two adults.
+const weeklyShoppingList = [
+  "Rolled oats - 2 cups",
+  "Milk or almond milk - 4 quarts",
+  "Greek yogurt - 2 quarts",
+  "Cottage cheese - 1 pint (2 cups)",
+  "Eggs - 1 dozen",
+  "Protein powder - 7 scoops",
+  "Chia seeds - 1/2 cup",
+  "Granola - 2 cups",
+  "Almond butter - 1/2 cup",
+  "Peanut butter - 1/2 cup",
+  "Almonds - 1 cup",
+  "Walnuts - 1/2 cup",
+  "Mixed nuts - 2 cups",
+  "Honey - 1 small jar",
+  "Olive oil - 1 bottle",
+  "Mustard - 1 small jar",
+  "Parmesan - 1/2 cup",
+  "Feta - 1 small block",
+  "Black pepper - 1 small jar",
+  "Rosemary - 1 small bunch or jar",
+  "Basil - 1 small bunch",
+  "Cinnamon - 1 small jar",
+  "Garlic - 1 head",
+  "Lemons - 4",
+  "Bananas - 6",
+  "Apples - 7",
+  "Blueberries - 2 cups",
+  "Strawberries - 2 cups",
+  "Raspberries - 2 cups",
+  "Mixed berries - 5 cups",
+  "Peaches - 2",
+  "Mixed greens - 6 cups",
+  "Baby spinach - 6 cups",
+  "Lettuce - 2 heads",
+  "Cucumbers - 2",
+  "Cherry tomatoes - 2 cups",
+  "Tomatoes - 5",
+  "Bell peppers - 4",
+  "Carrots - 6 medium",
+  "Celery - 1 bunch",
+  "Zucchini - 3",
+  "Sweet potatoes - 2 small",
+  "Potatoes - 4 medium",
+  "Green beans - 2 cups",
+  "Broccoli - 2 cups",
+  "Asparagus - 2 cups",
+  "Frozen berries - 2 cups",
+  "Onions - 2 medium",
+  "Whole-grain bread - 1 loaf",
+  "Whole-grain wraps - 4",
+  "Quinoa - 2 cups dry",
+  "Whole-wheat pasta - 12 oz",
+  "Chicken breast - 1 lb",
+  "Chicken thighs - 2.5 lb (about 6 pieces)",
+  "Turkey breast deli slices - 1 lb",
+  "Salmon fillets - 2 (about 12 oz)",
+  "Cod fillets - 2 (about 12 oz)",
+  "Shrimp - 12 oz",
+  "Tuna - 4 cans",
+  "Chickpeas - 1 can",
+  "Lentils - 1 cup dry"
+];
+
 // Meal plan data for each day with structured meals, ingredients, steps, and grocery lists.
 const mealPlan = {
   mon: {
@@ -7,6 +72,7 @@ const mealPlan = {
       "Milk or oat milk",
       "Blueberries",
       "Almonds",
+      "Cinnamon",
       "Banana",
       "Protein powder",
       "Peanut butter",
@@ -14,9 +80,8 @@ const mealPlan = {
       "Mixed greens",
       "Cherry tomatoes",
       "Cucumber",
-      "Carrots",
-      "Bell pepper",
-      "Hummus",
+      "Apples",
+      "Mixed nuts",
       "Olive oil",
       "Lemon",
       "Salmon fillet",
@@ -79,17 +144,15 @@ const mealPlan = {
       },
       {
         type: "Snack (PM)",
-        name: "Hummus & Veggie Sticks",
+        name: "Apple Slices & Mixed Nuts",
         ingredients: [
-          "1/4 cup hummus",
-          "1/2 cup carrot sticks",
-          "1/2 cup cucumber sticks",
-          "1/2 cup bell pepper strips"
+          "1 apple, sliced",
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Arrange vegetables on a plate.",
-          "Spoon hummus into a small bowl.",
-          "Dip and enjoy."
+          "Slice the apple.",
+          "Serve with mixed nuts.",
+          "Snack as needed."
         ]
       },
       {
@@ -118,21 +181,20 @@ const mealPlan = {
       "Greek yogurt",
       "Strawberries",
       "Walnuts",
-      "Apple",
-      "String cheese",
-      "Almonds",
-      "Raisins",
-      "Pumpkin seeds",
+      "Milk or almond milk",
+      "Protein powder",
+      "Frozen berries",
+      "Apples",
+      "Mixed nuts",
       "Whole-grain wrap",
       "Turkey breast",
-      "Avocado",
       "Spinach",
-      "Brown rice",
-      "Bell peppers",
-      "Onion",
-      "Black beans",
-      "Cumin",
-      "Lime"
+      "Lettuce",
+      "Cucumber",
+      "Cherry tomatoes",
+      "Tuna",
+      "Olive oil",
+      "Lemon"
     ],
     meals: [
       {
@@ -152,66 +214,64 @@ const mealPlan = {
       },
       {
         type: "Snack (AM)",
-        name: "Apple & String Cheese",
+        name: "Berry Protein Shake",
         ingredients: [
-          "1 apple, sliced",
-          "1 string cheese"
+          "1 cup milk or almond milk",
+          "1 scoop protein powder",
+          "1/2 cup frozen berries"
         ],
         steps: [
-          "Slice the apple.",
-          "Serve with string cheese.",
-          "Snack as needed."
+          "Add ingredients to a blender.",
+          "Blend until smooth.",
+          "Pour into a glass.",
+          "Serve immediately."
         ]
       },
       {
         type: "Lunch",
-        name: "Turkey Avocado Wrap",
+        name: "Turkey Apple Wrap",
         ingredients: [
           "1 whole-grain wrap",
           "3 slices turkey",
-          "1/2 avocado, sliced",
+          "1/2 apple, thinly sliced",
           "1 cup spinach",
           "1 tsp mustard"
         ],
         steps: [
           "Spread mustard on the wrap.",
-          "Layer turkey, avocado, and spinach.",
+          "Layer turkey, apple, and spinach.",
           "Roll tightly and slice in half.",
           "Serve immediately."
         ]
       },
       {
         type: "Snack (PM)",
-        name: "Simple Trail Mix",
+        name: "Mixed Nuts Cup",
         ingredients: [
-          "2 tbsp almonds",
-          "1 tbsp walnuts",
-          "1 tbsp raisins",
-          "1 tbsp pumpkin seeds"
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Combine ingredients in a small bowl.",
-          "Mix well.",
-          "Pack for later or eat right away."
+          "Portion mixed nuts into a small bowl.",
+          "Snack as needed."
         ]
       },
       {
         type: "Dinner",
-        name: "Veggie Rice & Beans",
+        name: "Tuna Lettuce Wraps",
         ingredients: [
-          "1 cup cooked brown rice",
-          "1/2 cup black beans",
-          "1/2 bell pepper, diced",
-          "1/4 onion, diced",
-          "1 tsp olive oil",
-          "1/2 tsp cumin",
-          "1 tsp lime juice"
+          "1 can tuna, drained",
+          "4 large lettuce leaves",
+          "1/2 cup cucumber, diced",
+          "1/2 cup cherry tomatoes, halved",
+          "1 tbsp olive oil",
+          "1 tsp lemon juice",
+          "Salt and pepper"
         ],
         steps: [
-          "Saute onion and bell pepper in olive oil for 4 minutes.",
-          "Add black beans and cumin, warm through.",
-          "Stir in rice and heat for 2 minutes.",
-          "Finish with lime juice."
+          "Mix tuna with olive oil, lemon juice, salt, and pepper.",
+          "Spoon tuna into lettuce leaves.",
+          "Top with cucumber and tomatoes.",
+          "Serve immediately."
         ]
       }
     ]
@@ -224,13 +284,15 @@ const mealPlan = {
       "Spinach",
       "Tomato",
       "Olive oil",
-      "Cottage cheese",
-      "Pineapple",
-      "Rice cakes",
-      "Almond butter",
-      "Tuna",
+      "Milk or almond milk",
+      "Protein powder",
+      "Banana",
+      "Apples",
+      "Mixed nuts",
       "Canned chickpeas",
+      "Cucumber",
       "Lemon",
+      "Feta",
       "Whole-wheat pasta",
       "Zucchini",
       "Parmesan",
@@ -256,30 +318,34 @@ const mealPlan = {
       },
       {
         type: "Snack (AM)",
-        name: "Cottage Cheese & Pineapple",
+        name: "Green Protein Shake",
         ingredients: [
-          "1/2 cup cottage cheese",
-          "1/2 cup pineapple chunks"
+          "1 cup milk or almond milk",
+          "1 scoop protein powder",
+          "1 banana",
+          "1 cup spinach"
         ],
         steps: [
-          "Spoon cottage cheese into a bowl.",
-          "Top with pineapple.",
-          "Serve chilled."
+          "Add ingredients to a blender.",
+          "Blend until smooth.",
+          "Pour into a glass.",
+          "Serve immediately."
         ]
       },
       {
         type: "Lunch",
-        name: "Tuna Chickpea Salad",
+        name: "Mediterranean Chickpea Salad",
         ingredients: [
-          "1 can tuna, drained",
-          "1/2 cup chickpeas",
+          "1 cup chickpeas",
+          "1/2 cucumber, diced",
           "1/2 tomato, diced",
+          "2 tbsp feta",
           "1 tbsp olive oil",
           "1 tsp lemon juice",
           "Salt and pepper"
         ],
         steps: [
-          "Combine tuna, chickpeas, and tomato.",
+          "Combine chickpeas, cucumber, tomato, and feta.",
           "Whisk olive oil, lemon juice, salt, and pepper.",
           "Toss dressing with salad.",
           "Serve chilled or room temp."
@@ -287,14 +353,13 @@ const mealPlan = {
       },
       {
         type: "Snack (PM)",
-        name: "Rice Cakes with Almond Butter",
+        name: "Mixed Nuts Cup",
         ingredients: [
-          "2 rice cakes",
-          "1 tbsp almond butter"
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Spread almond butter on rice cakes.",
-          "Serve immediately."
+          "Portion mixed nuts into a small bowl.",
+          "Snack as needed."
         ]
       },
       {
@@ -325,17 +390,18 @@ const mealPlan = {
       "Peaches or berries",
       "Protein powder",
       "Banana",
-      "Spinach",
-      "Greek yogurt",
-      "Granola",
+      "Peanut butter",
+      "Apples",
+      "Mixed nuts",
       "Chicken thighs",
       "Sweet potato",
       "Green beans",
       "Olive oil",
-      "Garlic",
-      "Soy sauce",
-      "Ginger",
-      "Brown rice"
+      "Lettuce",
+      "Cucumber",
+      "Tomato",
+      "Tuna",
+      "Lemon"
     ],
     meals: [
       {
@@ -356,12 +422,12 @@ const mealPlan = {
       },
       {
         type: "Snack (AM)",
-        name: "Green Protein Shake",
+        name: "Peanut Butter Protein Shake",
         ingredients: [
           "1 banana",
           "1 cup milk or almond milk",
           "1 scoop protein powder",
-          "1 cup spinach"
+          "1 tbsp peanut butter"
         ],
         steps: [
           "Add all ingredients to a blender.",
@@ -388,33 +454,34 @@ const mealPlan = {
       },
       {
         type: "Snack (PM)",
-        name: "Greek Yogurt & Granola",
+        name: "Apple Slices & Mixed Nuts",
         ingredients: [
-          "3/4 cup Greek yogurt",
-          "1/4 cup granola"
+          "1 apple, sliced",
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Spoon yogurt into a bowl.",
-          "Top with granola.",
-          "Serve immediately."
+          "Slice the apple.",
+          "Serve with mixed nuts.",
+          "Snack as needed."
         ]
       },
       {
         type: "Dinner",
-        name: "Ginger Garlic Stir-Fry",
+        name: "Tuna Lettuce Boats",
         ingredients: [
-          "1 cup mixed vegetables",
-          "1 cup cooked brown rice",
-          "1 tbsp soy sauce",
-          "1 tsp grated ginger",
-          "1 clove garlic, minced",
-          "1 tsp olive oil"
+          "1 can tuna, drained",
+          "4 large lettuce leaves",
+          "1/2 cucumber, diced",
+          "1/2 tomato, diced",
+          "1 tbsp olive oil",
+          "1 tsp lemon juice",
+          "Salt and pepper"
         ],
         steps: [
-          "Saute garlic and ginger in olive oil for 30 seconds.",
-          "Add vegetables and stir-fry 4-5 minutes.",
-          "Stir in rice and soy sauce.",
-          "Cook until warmed through."
+          "Mix tuna with olive oil, lemon juice, salt, and pepper.",
+          "Spoon tuna into lettuce leaves.",
+          "Top with cucumber and tomato.",
+          "Serve immediately."
         ]
       }
     ]
@@ -426,8 +493,11 @@ const mealPlan = {
       "Bell pepper",
       "Onion",
       "Whole-grain toast",
-      "Orange",
-      "Edamame",
+      "Milk or almond milk",
+      "Protein powder",
+      "Frozen berries",
+      "Apples",
+      "Mixed nuts",
       "Lentils",
       "Carrots",
       "Celery",
@@ -459,15 +529,17 @@ const mealPlan = {
       },
       {
         type: "Snack (AM)",
-        name: "Hard-Boiled Eggs & Orange",
+        name: "Berry Protein Shake",
         ingredients: [
-          "2 hard-boiled eggs",
-          "1 orange"
+          "1 cup milk or almond milk",
+          "1 scoop protein powder",
+          "1/2 cup frozen berries"
         ],
         steps: [
-          "Peel the eggs and the orange.",
-          "Slice the orange into wedges.",
-          "Serve together."
+          "Add ingredients to a blender.",
+          "Blend until smooth.",
+          "Pour into a glass.",
+          "Serve immediately."
         ]
       },
       {
@@ -489,15 +561,15 @@ const mealPlan = {
       },
       {
         type: "Snack (PM)",
-        name: "Steamed Edamame",
+        name: "Apple Slices & Mixed Nuts",
         ingredients: [
-          "1 cup frozen edamame",
-          "Pinch of salt"
+          "1 apple, sliced",
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Steam edamame for 4-5 minutes.",
-          "Sprinkle with salt.",
-          "Serve warm."
+          "Slice the apple.",
+          "Serve with mixed nuts.",
+          "Snack as needed."
         ]
       },
       {
@@ -527,11 +599,12 @@ const mealPlan = {
       "Granola",
       "Raspberries",
       "Almond butter",
-      "Rice cakes",
-      "Peanut butter",
-      "Cottage cheese",
-      "Blueberries",
-      "Apple",
+      "Milk or almond milk",
+      "Protein powder",
+      "Rolled oats",
+      "Cinnamon",
+      "Apples",
+      "Mixed nuts",
       "Whole-grain tortilla",
       "Roasted turkey",
       "Lettuce",
@@ -561,13 +634,17 @@ const mealPlan = {
       },
       {
         type: "Snack (AM)",
-        name: "Peanut Butter Rice Cakes",
+        name: "Oat Protein Shake",
         ingredients: [
-          "2 rice cakes",
-          "1 tbsp peanut butter"
+          "1 cup milk or almond milk",
+          "1 scoop protein powder",
+          "1/4 cup rolled oats",
+          "Pinch of cinnamon"
         ],
         steps: [
-          "Spread peanut butter on rice cakes.",
+          "Add ingredients to a blender.",
+          "Blend until smooth.",
+          "Pour into a glass.",
           "Serve immediately."
         ]
       },
@@ -590,15 +667,15 @@ const mealPlan = {
       },
       {
         type: "Snack (PM)",
-        name: "Cottage Cheese & Blueberries",
+        name: "Apple Slices & Mixed Nuts",
         ingredients: [
-          "1/2 cup cottage cheese",
-          "1/2 cup blueberries"
+          "1 apple, sliced",
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Spoon cottage cheese into a bowl.",
-          "Top with blueberries.",
-          "Serve chilled."
+          "Slice the apple.",
+          "Serve with mixed nuts.",
+          "Snack as needed."
         ]
       },
       {
@@ -629,14 +706,14 @@ const mealPlan = {
       "Chia seeds",
       "Mixed berries",
       "Whole-grain bread",
-      "Avocado",
+      "Cottage cheese",
       "Tomato",
-      "Mixed greens",
+      "Basil",
       "Olive oil",
       "Lemon",
+      "Protein powder",
+      "Apples",
       "Mixed nuts",
-      "Dried fruit",
-      "Greek yogurt",
       "Chicken breast",
       "Carrots",
       "Potatoes",
@@ -662,46 +739,48 @@ const mealPlan = {
       },
       {
         type: "Snack (AM)",
-        name: "Mixed Nuts & Dried Fruit",
+        name: "Berry Protein Shake",
         ingredients: [
-          "2 tbsp mixed nuts",
-          "1 tbsp dried fruit"
+          "1 cup milk",
+          "1 scoop protein powder",
+          "1/2 cup mixed berries"
         ],
         steps: [
-          "Combine nuts and dried fruit.",
-          "Mix and serve."
+          "Add ingredients to a blender.",
+          "Blend until smooth.",
+          "Pour into a glass.",
+          "Serve immediately."
         ]
       },
       {
         type: "Lunch",
-        name: "Avocado Tomato Toast",
+        name: "Tomato Cottage Toast",
         ingredients: [
           "2 slices whole-grain bread",
-          "1/2 avocado, mashed",
+          "1/2 cup cottage cheese",
           "1 small tomato, sliced",
+          "Fresh basil leaves",
           "1 tsp olive oil",
-          "1 tsp lemon juice",
           "Salt and pepper"
         ],
         steps: [
           "Toast bread until crisp.",
-          "Mix avocado with lemon juice, salt, and pepper.",
-          "Spread avocado on toast and top with tomato.",
-          "Drizzle with olive oil."
+          "Spread cottage cheese on toast.",
+          "Top with tomato and basil.",
+          "Drizzle with olive oil and season."
         ]
       },
       {
         type: "Snack (PM)",
-        name: "Greek Yogurt Protein Cup",
+        name: "Apple Slices & Mixed Nuts",
         ingredients: [
-          "3/4 cup Greek yogurt",
-          "1 tsp honey",
-          "1 tbsp mixed berries"
+          "1 apple, sliced",
+          "1/4 cup mixed nuts"
         ],
         steps: [
-          "Spoon yogurt into a bowl.",
-          "Stir in honey and top with berries.",
-          "Serve chilled."
+          "Slice the apple.",
+          "Serve with mixed nuts.",
+          "Snack as needed."
         ]
       },
       {
@@ -792,6 +871,26 @@ function setupDayButtons() {
 // Initialize when DOM is ready.
 document.addEventListener("DOMContentLoaded", setupDayButtons);
 
+// Render the weekly list with amounts for two adults.
+function renderWeeklyList() {
+  const weeklyContainer = document.getElementById("weekly-list");
+
+  if (!weeklyContainer) {
+    return;
+  }
+
+  const weeklyItems = weeklyShoppingList
+    .map((item) => `<li>${item}</li>`)
+    .join("");
+
+  weeklyContainer.innerHTML = `
+    <details class="meal-section">
+      <summary>Weekly Shopping List (2 Adults)</summary>
+      <ul>${weeklyItems}</ul>
+    </details>
+  `;
+}
+
 // Rotate ASCII characters for the title line.
 const rotorFrames = ["|", "/", "-", "\\"];
 let rotorIndex = 0;
@@ -808,3 +907,5 @@ document.addEventListener("DOMContentLoaded", () => {
   updateTitleRotors();
   setInterval(updateTitleRotors, 300);
 });
+
+document.addEventListener("DOMContentLoaded", renderWeeklyList);

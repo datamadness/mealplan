@@ -98,6 +98,14 @@ body {
   background: var(--panel);
 }
 
+/* Weekly list panel mirrors the meal panel style */
+.weekly-panel {
+  border: 1px dashed var(--border);
+  padding: 14px 16px;
+  background: var(--panel);
+  margin-bottom: 16px;
+}
+
 /* Day title */
 .day-title {
   margin: 0 0 10px 0;
