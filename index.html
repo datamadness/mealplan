@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Meal Plan</title>
+  <!-- Link to external styles for retro terminal UI -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Terminal frame wrapper -->
+  <div class="terminal">
+    <!-- Single rotating ASCII title line -->
+    <div class="title-line" aria-label="Mealplan title">
+      <span class="title-rotor" aria-hidden="true">|</span>
+      <span class="title-text">MEALPLAN</span>
+      <span class="title-rotor" aria-hidden="true">|</span>
+    </div>
+
+    <!-- Button row for day selection -->
+    <div class="day-buttons" role="tablist" aria-label="Choose a day">
+      <button class="day-btn is-active" data-day="mon" role="tab">Mon</button>
+      <button class="day-btn" data-day="tue" role="tab">Tue</button>
+      <button class="day-btn" data-day="wed" role="tab">Wed</button>
+      <button class="day-btn" data-day="thu" role="tab">Thu</button>
+      <button class="day-btn" data-day="fri" role="tab">Fri</button>
+      <button class="day-btn" data-day="sat" role="tab">Sat</button>
+      <button class="day-btn" data-day="sun" role="tab">Sun</button>
+    </div>
+
+    <!-- Content area where meals for the selected day appear -->
+    <section class="meal-panel" aria-live="polite">
+      <div id="meal-content"></div>
+    </section>
+
+    <!-- Footer hint for interaction -->
+    <p class="hint">Use the day buttons to load meals. All data stays local.</p>
+  </div>
+
+  <!-- Script with meal plan data and interaction logic -->
+  <script src="script.js"></script>
+</body>
+</html>

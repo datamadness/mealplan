@@ -1,0 +1,175 @@
+/* Base terminal theme variables */
+:root {
+  --bg: #050505;
+  --green: #00ff66;
+  --green-dim: #00cc55;
+  --panel: #0a0a0a;
+  --border: #0f3;
+  --glow: rgba(0, 255, 102, 0.25);
+  --font: "Courier New", Courier, monospace;
+}
+
+/* Global resets and background styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0b120b 0%, #050505 60%);
+  color: var(--green);
+  font-family: var(--font);
+}
+
+/* Main terminal container with subtle glow */
+.terminal {
+  width: min(1000px, 92vw);
+  padding: 24px;
+  border: 2px solid var(--border);
+  background: linear-gradient(180deg, #060606 0%, #000 100%);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+/* Single-line ASCII title styling */
+.title-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: #000;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--glow);
+}
+
+.title-text {
+  font-size: clamp(16px, 2.2vw, 22px);
+}
+
+.title-rotor {
+  font-size: clamp(16px, 2vw, 22px);
+}
+
+/* Button row layout */
+.day-buttons {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Individual day buttons */
+.day-btn {
+  background: #000;
+  color: var(--green);
+  border: 1px solid var(--border);
+  padding: 10px 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 0 6px transparent;
+}
+
+.day-btn:hover,
+.day-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--glow);
+  border-color: var(--green);
+}
+
+.day-btn.is-active {
+  background: var(--green);
+  color: #000;
+}
+
+/* Panel for meal cards */
+.meal-panel {
+  border: 1px dashed var(--border);
+  padding: 16px;
+  background: var(--panel);
+}
+
+/* Day title */
+.day-title {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Meal card layout */
+.meal-card {
+  border: 1px solid var(--border);
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #000;
+}
+
+.meal-card:last-child {
+  margin-bottom: 0;
+}
+
+.meal-name {
+  margin: 0 0 6px 0;
+  font-weight: 700;
+}
+
+.meal-section {
+  margin: 6px 0;
+  padding-left: 10px;
+  border-left: 2px solid var(--green-dim);
+}
+
+.meal-section ul,
+.meal-section ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* Collapsible details styling */
+.meal-section summary {
+  cursor: pointer;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.meal-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.meal-section summary::before {
+  content: "[+] ";
+}
+
+.meal-section[open] summary::before {
+  content: "[-] ";
+}
+
+/* Footer hint */
+.hint {
+  margin-top: 14px;
+  color: var(--green-dim);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 720px) {
+  .terminal {
+    padding: 16px;
+  }
+
+  .day-buttons {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
